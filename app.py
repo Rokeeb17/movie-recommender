@@ -1,6 +1,7 @@
 import streamlit as st
 import pickle
 import pandas as pd
+from PIL import Image
 
 def recommend(movie):
 
@@ -33,7 +34,10 @@ similar1 = pickle.load(open('similar1.pkl', 'rb'))
 similar2 = pickle.load(open('similar2.pkl', 'rb'))
 similar3 = pickle.load(open('similar3.pkl', 'rb'))
 
-st.title('Movie Recommender System')
+image = Image.open('360_F_590754013_CoFRYEcAmLREfB3k8vjzuyStsDbMAnqC.jpg')
+st.image(image, use_column_width=False)
+
+st.title('Media Recommender System')
 
 selected_movie_name = st.selectbox(
     "Let's get you some recommendations! Enter a movie you like:",
